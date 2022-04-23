@@ -1,4 +1,4 @@
-// array with pokemon objects
+// pokemon objects
 let pokemonList = [
     {
         name: "Chamelake",
