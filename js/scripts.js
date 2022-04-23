@@ -1,8 +1,3 @@
-alert( 'Hello world' );
-
-let favoriteFood = 'Spaghetti';
-document.write( favoriteFood );
-
 // array with pokemon objects
 let pokemonList = [
     {
