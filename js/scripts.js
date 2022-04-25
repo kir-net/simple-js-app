@@ -23,16 +23,16 @@ let pokemonList = [
         height: 2,
         types: ['lakes','boats','liquid']
     }
-]
+];
 
-document.write("<h1>Available Pokémons</h1>")
-document.write("<ul>")
+document.write("<h1>Available Pokémons</h1>");
+document.write("<ul>");
 // iterate through pokemon list and print it with height info to index.html 
-for ( i = 0; i<pokemonList.length; i++ ) {
+for ( let i = 0; i<pokemonList.length; i++ ) {
     // add comment to pokemons taller than threshold
     let isBig = pokemonList[i].height > threshold ? "- Wow, that's big!" : "";
 	document.write(
         `<li><b>${pokemonList[i].name}</b><br> &nbsp&nbsp(height: ${pokemonList[i].height}) ${isBig} </li>`
     );
 }
-document.write("</ul>")
+document.write("</ul>");
