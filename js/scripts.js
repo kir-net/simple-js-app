@@ -1,3 +1,6 @@
+// set variables
+let threshold = 12;
+
 // pokemon objects
 let pokemonList = [
     {
@@ -21,3 +24,15 @@ let pokemonList = [
         types: ['lakes','boats','liquid']
     }
 ]
+
+document.write("<h1>Available Pokémons</h1>")
+document.write("<ul>")
+// iterate through pokemon list and print it with height info to index.html 
+for ( i = 0; i<pokemonList.length; i++ ) {
+    // add comment to pokemons taller than threshold
+    let isBig = pokemonList[i].height > threshold ? " - Wow, that's big!" : "";
+	document.write(
+        `<li>${pokemonList[i].name} (height: ${pokemonList[i].height}) ${isBig} </li>`
+    );
+}
+document.write("</ul>")
