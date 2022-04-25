@@ -30,9 +30,9 @@ document.write("<ul>")
 // iterate through pokemon list and print it with height info to index.html 
 for ( i = 0; i<pokemonList.length; i++ ) {
     // add comment to pokemons taller than threshold
-    let isBig = pokemonList[i].height > threshold ? " - Wow, that's big!" : "";
+    let isBig = pokemonList[i].height > threshold ? "- Wow, that's big!" : "";
 	document.write(
-        `<li><b>${pokemonList[i].name}</b> (height: ${pokemonList[i].height}) ${isBig} </li>`
+        `<li><b>${pokemonList[i].name}</b><br> &nbsp&nbsp(height: ${pokemonList[i].height}) ${isBig} </li>`
     );
 }
 document.write("</ul>")
