@@ -1,0 +1,65 @@
+/* ---------------------------------- */
+/*            base settings           */
+/* ---------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #a7d6fd;
+  font-family: "Architects Daughter", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #323750;
+}
+
+h1 {
+  font-family: "Architects Daughter", cursive;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 20px 15%;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 30px 15% 0;
+  text-align: left;
+  padding: 0;
+}
+
+ul li {
+  padding: 5px 0;
+}
+ul li:hover {
+  color: #0b0c11;
+  font-size: 1.2rem;
+}
+
+/* ---------------------------------- */
+/*           media queries            */
+/* ---------------------------------- */
+@media all and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+
+  h1, ul {
+    margin: 20px 5%;
+  }
+}
+@media all and (min-width: 700px) {
+  html {
+    font-size: 20px;
+  }
+
+  h1, ul {
+    margin: 20px 25%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

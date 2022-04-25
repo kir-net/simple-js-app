@@ -32,7 +32,7 @@ for ( i = 0; i<pokemonList.length; i++ ) {
     // add comment to pokemons taller than threshold
     let isBig = pokemonList[i].height > threshold ? " - Wow, that's big!" : "";
 	document.write(
-        `<li>${pokemonList[i].name} (height: ${pokemonList[i].height}) ${isBig} </li>`
+        `<li><b>${pokemonList[i].name}</b> (height: ${pokemonList[i].height}) ${isBig} </li>`
     );
 }
 document.write("</ul>")

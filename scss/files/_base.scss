@@ -1,0 +1,42 @@
+/* ---------------------------------- */
+/*            base settings           */
+/* ---------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $color-page;
+    font-family: "Architects Daughter", cursive;
+    font-weight: 500;
+    line-height: 1.4;
+    color: $color-page-font;
+}
+
+
+h1 {
+    font-family: "Architects Daughter", cursive;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin:  $large 15%;
+    text-align: left;
+}
+
+ul{
+    list-style-type: none;
+    margin: $huge 15% 0;
+    text-align: left;
+    padding: 0;
+}
+
+ul li{
+    padding: $small 0;
+    &:hover {
+        color: darken($color-page-font, 20%);
+        font-size: 1.2rem;
+    }
+}
