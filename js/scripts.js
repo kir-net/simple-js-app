@@ -28,19 +28,40 @@ let pokemonRepository = (function() {
         }
     ];
 
-    // function returns pokemonList
+    // return pokemonList
     function getAll() {
         return pokemonList;
     }
 
-    // function adds pokemon object to list
+    // add pokemon object to list
     function add(pokemon) {
-        pokemonList.push(pokemon);
+        Object.keys(pokemon).forEach(function(key) {
+            if (! Object.keys(pokemonList[0]).includes(key)) {
+                console.error(`Error: The key "${key}" is not suitable.`);
+            }
+        });
+        if (typeof pokemon.name !== "string") {
+            console.error("Error: The new Pokemon's name must be a string.");
+        } else {
+            pokemonList.push(pokemon);
+            console.log(`${pokemon.name} was added successfully.`)
+        }     
     }
     
+    // return pokemon by name
+    function getByName(searchName) {
+        result = pokemonList.filter(pokemon => pokemon.name === searchName);
+        if (result.length == 0) {
+            console.error(`Error: "${searchName}" is not in the List.`);
+        } else {
+            return result;
+        }
+    }  
+
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        getByName: getByName
     }  
 
 })();
