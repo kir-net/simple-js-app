@@ -17,7 +17,6 @@ body {
     color: $color-page-font;
 }
 
-
 h1 {
     font-family: "Architects Daughter", cursive;
     font-size: 1.8rem;
@@ -26,16 +25,17 @@ h1 {
     text-align: left;
 }
 
-ul{
+.ul{
     list-style-type: none;
     margin: $huge 15% 0;
     padding: 0;
 }
 
-ul li{
+.list-item{
     padding: $small 0;
     &:hover {
         color: darken($color-page-font, 20%);
         font-size: 1.2rem;
     }
 }
+

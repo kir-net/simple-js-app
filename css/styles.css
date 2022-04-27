@@ -18,11 +18,9 @@ body {
 }
 
 h1 {
-  font-family: "Architects Daughter", cursive;
-  font-size: 1.8rem;
+  font-size: 5vw;
   font-weight: 600;
-  margin: 20px 15%;
-  text-align: left;
+  text-align: center;
 }
 
 ul {
@@ -31,10 +29,15 @@ ul {
   padding: 0;
 }
 
-ul li {
-  padding: 5px 0;
+.list-item {
+  font-size: 3vw;
+  width: 60%;
+  height: 6vw;
+  padding: 5px;
+  margin-left: 20%;
+  margin-top: 2vw;
 }
-ul li:hover {
+.list-item:hover {
   color: #0b0c11;
   font-size: 1.2rem;
 }

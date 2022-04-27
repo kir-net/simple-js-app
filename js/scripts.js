@@ -72,19 +72,15 @@ let pokemonRepository = (function() {
 // get pokemonList from pokemonRepository
 pokemonList = pokemonRepository.getAll();
 
-// print page title
-document.write("<h1>Available Pokémons</h1>");
-
-//initiate list for printing pokemon items
-document.write("<ul>");
 
 // iterate through pokemon list and print it with height info to index.html 
 pokemonList.forEach( function(pokemon) {
-    let isBig = pokemon.height > threshold ? "- Wow, that's big!" : "";
-    // add comment to pokemons taller than threshold
-	document.write(
-        `<li><b>${pokemon.name}</b><br> &nbsp&nbsp(height: ${pokemon.height}) ${isBig} </li>`
-    );    
+    // get list selector
+    let pokemonList  = document.querySelector('.pokemon-list');  
+    let listItem     = document.createElement('li');
+    let button       = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('list-item'); 
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);   
 });
-// close list tag
-document.write("</ul>");
