@@ -35,6 +35,9 @@ let pokemonRepository = (function() {
 
     // add pokemon object to list
     function add(pokemon) {
+        if (typeof pokemon !== 'object') {
+            console.error(`Error: Only objects can be added.`);
+        }
         Object.keys(pokemon).forEach(function(key) {
             if (! Object.keys(pokemonList[0]).includes(key)) {
                 console.error(`Error: The key "${key}" is not suitable.`);
