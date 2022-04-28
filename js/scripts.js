@@ -1,6 +1,28 @@
 // pokemon repository 
 let pokemonRepository = (function() {
 
+    // test if pokemon object to be added is valid
+    function isPokemon(pokemon) {
+        result = true;
+        if (typeof pokemon !== 'object') {
+            console.error(`Error: Only objects can be added.`);
+            result = false;
+        }
+        if (result === true) {
+            Object.keys(pokemon).forEach(function(key) {
+                if (! Object.keys(pokemonList[0]).includes(key)) {
+                    console.error(`Error: The key "${key}" is not suitable.`);
+                    result = false;
+                }
+            })
+        }
+        if ( (result === true) && (typeof pokemon.name !== "string") ) {        
+            console.error("Error: The new Pokemon's name must be a string.");
+            result = false;
+        } 
+        return result;
+    }
+
     // pokemon objects
     let pokemonList = [
         {
@@ -32,17 +54,7 @@ let pokemonRepository = (function() {
 
     // add pokemon object to list
     function add(pokemon) {
-        if (typeof pokemon !== 'object') {
-            console.error(`Error: Only objects can be added.`);
-        }
-        Object.keys(pokemon).forEach(function(key) {
-            if (! Object.keys(pokemonList[0]).includes(key)) {
-                console.error(`Error: The key "${key}" is not suitable.`);
-            }
-        });
-        if (typeof pokemon.name !== "string") {
-            console.error("Error: The new Pokemon's name must be a string.");
-        } else {
+        if (isPokemon(pokemon)){
             pokemonList.push(pokemon);
             console.log(`${pokemon.name} was added successfully.`)
         }     
