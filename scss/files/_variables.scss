@@ -6,27 +6,46 @@ $darkblue:    #0d4675;
 $lightyellow: #fae154;
 $grey:        grey;
 $white:       rgb(252, 252, 241);
+$green:       rgb(150, 252, 66);
 
 
 // Colors: functional
+
 // page
-$color-page:          $blue;
-$color-page-font:     $darkgrey;
+$color-page:           $blue;
+$color-page-font:      $darkgrey;
 // title
-$color-title:         $lightyellow;
-$color-title-border:  darken($color-page, 20%);
-$color-title-shadow:  $white;
-// buttons
-$color-button:        lighten($color-title, 25%);
-$color-button-font:   $darkgrey;
-$color-button-border: darken($color-page, 20%);
-$color-button-hover:  lighten($color-button, 10%);
-$color-button-shadow: $white;
+$color-title:          $lightyellow;
+$color-title-shadow:   $white;
+// buttons 
+$color-button:         lighten($color-title, 25%);
+$color-button-font:    $darkgrey;
+$color-button-hover:   lighten($color-button, 10%);
+$color-button-shadow:  $white;
+$color-button-clicked: $green;
+// general
+$color-border:         darken($color-page, 20%);
 
 
 // Distances
 $nano:    1px;
+$tiny:    3px;
 $small:   5px;
 $medium: 10px;
 $large:  20px;
 $huge:   30px;
+
+%basic-style {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    border: 3px $color-border solid;
+}
+
+%button-focus {
+    letter-spacing: $small;
+    border-radius: 3% 25% ;
+    box-shadow: inset 0 0 $huge $small $color-button-hover;
+    box-shadow: 0 0 $medium $nano $color-button-shadow;
+}

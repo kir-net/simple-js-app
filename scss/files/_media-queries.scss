@@ -6,6 +6,8 @@
     h1{
         font-size: calc(12px + 3vw);
         margin-top: 5vw;
+        width: 70%;
+        margin-left: 15%;
     }
 
     ul{
@@ -15,7 +17,7 @@
     .list-item{
         font-size: calc(8px + 2vw);
         padding: $medium 0;
-        margin: 1.5vw 25%; 
-        width: 50%;
+        margin: 1.5vw 30%; 
+        width: 40%;
     }
 }

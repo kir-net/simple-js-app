@@ -17,18 +17,16 @@ body {
 }
 
 h1 { 
+    @extend %basic-style;
     background-color: $color-title;
-    font-family: "Architects Daughter", cursive;
-    width: 90%;
+    width: 90%; 
+    padding: $small 0;  
     margin-left: 5%;
     font-size: calc(16px + 4vw);
-    font-weight: 600;
-    border: 3px $color-button-border solid;
-    margin-top: 3vw;
-    text-align: center;
+    margin-top: 8vw;   
     border-radius: 10%;
-    box-shadow: inset 0 0 50px 5px $color-button-hover;
-    box-shadow: 0 0 5px 1px $color-title-shadow;
+    box-shadow: inset 0 0 50px $small $color-button-hover;
+    box-shadow: 0 0 $small $nano $color-title-shadow;
 } 
 
 ul{
@@ -38,24 +36,23 @@ ul{
 }
 
 .list-item{
-    font-family: "Architects Daughter", cursive;
-    font-size: calc(10px + 3vw);
-    font-weight: 600;
-    letter-spacing: 3px;
+    @extend %basic-style;    
+    font-size: calc($medium + 3vw);   
     background-color: $color-button;
     color: $color-button-font;
     padding: $large 0;
     margin: 3vw 20%; 
     width: 60%;
-    border: 3px $color-button-border solid;
     border-radius: 3% 25%;
+    box-shadow: 0 0 $tiny $nano $color-button-shadow;
     transition: all 0.15s ease-in-out 0s;
     &:hover {
-        letter-spacing: $small;
+        @extend %button-focus;             
         background: $color-button-hover;
-        border-radius: 3% 25% ;
-        box-shadow: inset 0 0 30px 5px $color-button-hover;
-        box-shadow: 0 0 10px 1px $color-button-shadow;
+    }
+    &:active {
+        @extend %button-focus;        
+        background: $color-button-clicked;
     }
 }
 

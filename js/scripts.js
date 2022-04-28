@@ -1,6 +1,3 @@
-// set variables
-let threshold = 12;   // threshold for printing comment on pokemons height
-
 // pokemon repository 
 let pokemonRepository = (function() {
 
@@ -75,6 +72,7 @@ let pokemonRepository = (function() {
         });   
     }
 
+    // return contained functions
     return {
         getAll: getAll,
         add: add,
@@ -87,8 +85,7 @@ let pokemonRepository = (function() {
 // get pokemonList from pokemonRepository
 pokemonList = pokemonRepository.getAll();
 
-
-// iterate through pokemon list 
+// print pokemon list on screen
 pokemonList.forEach( function(pokemon) {
     pokemonRepository.addListItem(pokemon);   
 });
