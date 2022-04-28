@@ -1,21 +1,17 @@
 /* ---------------------------------- */
 /*           media queries            */
 /* ---------------------------------- */
-@media all and (max-width: 400px) {
-    html{
-        font-size: 12px;
+@media screen and (orientation:landscape) { 
+    h1{
+        font-size: calc(12px + 3vw);
     }
-    
-    h1, ul{
-        margin:  20px 5%;;
+    ul{
+        padding-top: 2vw;
     }
-}
-@media all and (min-width: 800px) {
-    html{
-        font-size: 24px;
-    }
-    
-    h1, ul{
-        margin:  20px 25%;;
+    .list-item{
+        font-size: calc(8px + 2vw);
+        padding: $medium 0;
+        margin: 1.5vw 25%; 
+        width: 50%;
     }
 }

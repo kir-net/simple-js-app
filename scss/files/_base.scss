@@ -17,25 +17,46 @@ body {
     color: $color-page-font;
 }
 
-h1 {
+h1 { 
+    background-color: $color-title;
     font-family: "Architects Daughter", cursive;
-    font-size: 1.8rem;
+    width: 90%;
+    margin-left: 5%;
+    font-size: calc(16px + 4vw);
     font-weight: 600;
-    margin:  $large 15%;
-    text-align: left;
-}
+    border: 3px $color-button-border solid;
+    margin-top: 3vw;
+    text-align: center;
+    border-radius: 10%;
+    box-shadow: inset 0 0 50px 5px $color-button-hover;
+    box-shadow: 0 0 5px 1px $color-title-shadow;
+} 
 
-.ul{
+ul{
+    padding-inline-start: 0;
     list-style-type: none;
-    margin: $huge 15% 0;
-    padding: 0;
+    padding-top: 5vw;
 }
 
 .list-item{
-    padding: $small 0;
+    font-family: "Architects Daughter", cursive;
+    font-size: calc(10px + 3vw);
+    font-weight: 600;
+    letter-spacing: 3px;
+    background-color: $color-button;
+    color: $color-button-font;
+    padding: $large 0;
+    margin: 3vw 20%; 
+    width: 60%;
+    border: 3px $color-button-border solid;
+    border-radius: 3% 25%;
+    transition: all 0.15s ease-in-out 0s;
     &:hover {
-        color: darken($color-page-font, 20%);
-        font-size: 1.2rem;
+        letter-spacing: $small;
+        background: $color-button-hover;
+        border-radius: 3% 25% ;
+        box-shadow: inset 0 0 30px 5px $color-button-hover;
+        box-shadow: 0 0 10px 1px $color-button-shadow;
     }
 }
 
