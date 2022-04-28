@@ -94,10 +94,8 @@ let pokemonRepository = (function() {
 
 })();
 
-// get pokemonList from pokemonRepository
-pokemonList = pokemonRepository.getAll();
-
-// print pokemon list on screen
+// print pokemons on screen
+pokemonList = pokemonRepository.getAll();  // get pokemonList from pokemonRepository
 pokemonList.forEach( function(pokemon) {
     pokemonRepository.addListItem(pokemon);   
 });
