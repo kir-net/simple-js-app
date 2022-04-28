@@ -2,12 +2,16 @@
 /*           media queries            */
 /* ---------------------------------- */
 @media screen and (orientation:landscape) { 
+
     h1{
         font-size: calc(12px + 3vw);
+        margin-top: 5vw;
     }
+
     ul{
         padding-top: 2vw;
     }
+    
     .list-item{
         font-size: calc(8px + 2vw);
         padding: $medium 0;

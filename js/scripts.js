@@ -69,7 +69,10 @@ let pokemonRepository = (function() {
         button.innerText = pokemon.name;
         button.classList.add('list-item'); 
         listItem.appendChild(button);
-        pokemonList.appendChild(listItem);   
+        pokemonList.appendChild(listItem);
+        button.addEventListener('click', function (event) {
+            console.log(pokemon.name);
+        });   
     }
 
     return {

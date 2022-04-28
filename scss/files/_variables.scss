@@ -1,21 +1,22 @@
 // Colors: descriptive 
-$blue:        #166fd4d6; 
+$blue:        #2b70bed6; 
 $darkgrey:    #323750;
 $lightblue:   #d7edfd;
 $darkblue:    #0d4675; 
 $lightyellow: #fae154;
 $grey:        grey;
-$white:       white;
+$white:       rgb(252, 252, 241);
 
 
 // Colors: functional
+// page
 $color-page:          $blue;
 $color-page-font:     $darkgrey;
-
+// title
 $color-title:         $lightyellow;
 $color-title-border:  darken($color-page, 20%);
 $color-title-shadow:  $white;
-
+// buttons
 $color-button:        lighten($color-title, 25%);
 $color-button-font:   $darkgrey;
 $color-button-border: darken($color-page, 20%);
@@ -23,11 +24,9 @@ $color-button-hover:  lighten($color-button, 10%);
 $color-button-shadow: $white;
 
 
-
-
 // Distances
-$nano: 1px;
-$small: 5px;
+$nano:    1px;
+$small:   5px;
 $medium: 10px;
-$large: 20px;
-$huge:  30px;
+$large:  20px;
+$huge:   30px;
