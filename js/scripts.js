@@ -18,45 +18,37 @@ let pokemonRepository = (function() {
         return result;
     }
 
-    // NEW FUNCTION: loadList() --> fetches Pokemons from pokeapi
+    // fetches Pokemons from pokeapi
     function loadList() {
         return fetch(apiUrl)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(json){
+        .then(response => response.json())   
+        .then(function(json){       
             json.results.forEach(function (item){
                 let pokemon = {
                     name: item.name,
-                    detailsUrl: item.apiUrl
+                    detailsUrl: item.url
                 };
                 add(pokemon);
             });
         })
-        .catch(function(e){
-            console.error(e);
-        })
+        .catch( e => console.error(e))
     }
 
-    // NEW FUNCTION: loadDetails() --> GETs the pokemon details using the URL
+    // GET the pokemon details using the URL
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
+        .then(response => response.json()) 
         .then(function (details) {
-            // Now we add the details to the item
-            item.imageUrl = details.sprites.front_default;
-            item.height   = details.height;
-            item.types    = details.types;
+          // Now we add the details to the item
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
         })
-        .catch(function (e) {
-            console.error(e);
-        });
-    }
+        .catch(e => console.error(e))
+      }
 
-    // NEW FUNCTION: Show details when clicking a pokemon button
+    // show details when clicking a pokemon button
     function showDetails(pokemon) {
         loadDetails(pokemon)
         .then(function () {
@@ -73,7 +65,7 @@ let pokemonRepository = (function() {
     function add(pokemon) {
         if (isPokemon(pokemon)){
             pokemonList.push(pokemon);
-            console.log(`${pokemon.name} was added successfully.`)
+            //console.log(`${pokemon.name} was added successfully.`)
         }     
     }
     
