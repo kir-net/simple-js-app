@@ -1,6 +1,26 @@
 /* ---------------------------------- */
 /*           media queries            */
 /* ---------------------------------- */
+@media screen and (max-width:400px) { 
+
+    h1{
+        font-size: calc(12px + 3vw);
+        margin-top: 5vw;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    ul{
+        padding-top: 2vw;
+    }
+    
+    .list-item{
+        font-size: calc(8px + 2vw);
+        margin: 1vw 5%; 
+        width: 90%;
+    }
+}
+
 @media screen and (orientation:landscape) { 
 
     h1{
@@ -16,7 +36,7 @@
     
     .list-item{
         font-size: calc(8px + 2vw);
-        margin: 1vw 30%; 
-        width: 40%;
+        margin: 1vw 25%; 
+        width: 50%;
     }
 }
