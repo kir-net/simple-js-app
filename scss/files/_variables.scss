@@ -3,28 +3,31 @@ $blue:        #2b70bed6;
 $darkgrey:    #323750;
 $lightblue:   #d7edfd;
 $darkblue:    #0d4675; 
-$lightyellow: #fac95f;
+$yellow:      #fac95f;
 $grey:        grey;
+$lightgrey:   rgb(185, 185, 185); 
 $white:       rgb(252, 252, 241);
-$green:       rgb(150, 252, 66);
+$whitegrey:   rgb(245, 244, 244);
 
 
 // Colors: functional
 
 // page
-$color-page:           $blue;
-$color-page-font:      $darkgrey;
+$color-page:                $blue;
+$color-page-font:           $darkgrey;
 // title
-$color-title:          $lightyellow;
-$color-title-shadow:   $white;
+$color-title:               $yellow;
+$color-title-shadow:        $white;
 // buttons 
-$color-button:         lighten($color-title, 25%);
-$color-button-font:    $darkgrey;
-$color-button-hover:   lighten($color-button, 10%);
-$color-button-shadow:  $white;
-$color-button-clicked: $green;
-// general
-$color-border:         darken($color-page, 20%);
+$color-button:              lighten($color-title, 25%);
+$color-button-font:         $darkgrey;
+$color-button-hover:        lighten($color-button, 10%);
+$color-button-shadow:       $white;
+$color-button-font-active:  $blue;
+// image
+$color-image:               $whitegrey;
+$color-image-border:        $lightgrey;
+
 
 
 // Distances
@@ -39,13 +42,10 @@ $huge:   30px;
     font-family: "Architects Daughter", cursive;
     font-weight: 600;
     text-align: center;
-    letter-spacing: 3px;
-    border: 3px $color-border solid;
+    letter-spacing: 2px;
 }
 
 %button-focus {
-    letter-spacing: $small;
-    border-radius: 3% 25% ;
     box-shadow: inset 0 0 $huge $small $color-button-hover;
-    box-shadow: 0 0 $medium $nano $color-button-shadow;
+    box-shadow: 0 0 $small $nano $color-button-shadow;
 }

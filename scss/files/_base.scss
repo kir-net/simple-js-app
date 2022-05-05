@@ -23,28 +23,31 @@ h1 {
     padding: $small 0;  
     margin-left: 5%;
     font-size: calc(16px + 4vw);
-    margin-top: 8vw;   
+    margin-top: 10vw;   
     border-radius: 10%;
     box-shadow: inset 0 0 50px $small $color-button-hover;
     box-shadow: 0 0 $small $nano $color-title-shadow;
 } 
 
 ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding-inline-start: 0;
     list-style-type: none;
-    padding-top: 5vw;
 }
 
 .list-item{
     @extend %basic-style;    
-    font-size: calc($medium + 3vw);   
+    font-size: calc($tiny + 2vw);   
     background-color: $color-button;
     color: $color-button-font;
-    padding: $small 0;
-    margin: 1.5vw 20%; 
-    width: 60%;
+    padding: $small $medium;
+    margin: 1.2vw 0.6vw; 
+    border-style: none;
+    white-space: nowrap;
     border-radius: 3% 25%;
-    box-shadow: 0 0 $tiny $nano $color-button-shadow;
+    box-shadow: inset 0 0 $tiny $nano $color-button-shadow;
     transition: all 0.15s ease-in-out 0s;
     &:hover {
         @extend %button-focus;             
@@ -52,11 +55,6 @@ ul{
     }
     &:active {
         @extend %button-focus;        
-        background: $color-button-clicked;
+        background-color: $color-button;
     }
-}
-
-img{
-    max-height: 50px; 
-    padding-left: 20px;  
 }
