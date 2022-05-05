@@ -108,6 +108,7 @@ let pokemonRepository = (function() {
         });
     }
 
+    // show modal
     let modalContainer = document.querySelector("#modal-container");
     function showModal(title, text, array, url) {
       modalContainer.innerHTML = "";
@@ -140,6 +141,7 @@ let pokemonRepository = (function() {
       modalContainer.classList.add("is-visible");
     }
   
+    // hide modal
     function hideModal() {
       modalContainer.classList.remove("is-visible");
     }
