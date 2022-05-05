@@ -15,3 +15,28 @@
         margin: $small;
     }
 }
+
+@media screen and (min-width:800px) { 
+
+    .modal h1 {
+        margin-top: 35px;
+        font-size: 40px;
+        }
+        
+        .modal div {
+        background-color: $color-image;
+        border: $color-image-border solid $nano;
+        text-align: center;
+        width: 70%;
+        margin-left: 15%;
+        }
+        
+        .modal-image {
+        min-height: 160px;  
+        }
+        
+        .modal p {
+        font-size: 25px;
+        margin: 20px 0 20px 15%;
+    }
+}

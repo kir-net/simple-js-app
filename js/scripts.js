@@ -56,7 +56,7 @@ let pokemonRepository = (function() {
         });   
     }
 
-    // fetches Pokemons from pokeapi
+    // fetch Pokemons from pokeapi
     function loadList() {
         return fetch(apiUrl)
         .then(response => response.json())   
@@ -86,7 +86,6 @@ let pokemonRepository = (function() {
         })
         .catch(e => console.error(e))
       }
-
 
     // extract pokemons types
     function extractTypes(types) {
@@ -131,8 +130,7 @@ let pokemonRepository = (function() {
   
       let contentElement = document.createElement("p");
       contentElement.innerText = `${text} \n\n Types:\n ${array}`;
-      
-  
+        
       modal.appendChild(closeButtonElement);
       modal.appendChild(titleElement);
       modal.appendChild(imageDiv);
@@ -146,12 +144,14 @@ let pokemonRepository = (function() {
       modalContainer.classList.remove("is-visible");
     }
   
+    // close modal when user hits ESC
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
         hideModal();  
       }
     });
 
+    // close modal when user clicks outside modal 
     modalContainer.addEventListener("click", (e) => {
       // Since this is also triggered when clicking INSIDE the modal
       // We only want to close if the user clicks directly on the overlay
@@ -159,10 +159,6 @@ let pokemonRepository = (function() {
       if (target === modalContainer) {
         hideModal();
       }
-    });
-  
-    document.querySelector("#show-modal").addEventListener("click", () => {
-      showModal("Modal title", "This is the modal content!");
     });
   
     // return contained functions
