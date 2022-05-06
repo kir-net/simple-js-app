@@ -100,9 +100,9 @@ let pokemonRepository = (function() {
     function showDetails(pokemon) {
         loadDetails(pokemon)
         .then(function () {
-            showModal(`${pokemon.name}`, 
-              `Height: ${pokemon.height}`,  
-              extractedTypes = extractTypes(pokemon.types), 
+            showModal(pokemon.name, 
+              pokemon.height,  
+              extractTypes(pokemon.types), 
               pokemon.imageUrl
             );
         });
@@ -130,7 +130,7 @@ let pokemonRepository = (function() {
       imageDiv.appendChild(imageElement);
   
       let contentElement = document.createElement("p");
-      contentElement.innerText = `${text} \n\n Types:\n ${array}`;
+      contentElement.innerText = `Height: ${text} \n Types: ${array}`;
         
       modal.appendChild(closeButtonElement);
       modal.appendChild(titleElement);

@@ -38,7 +38,8 @@ ul{
 
 .list-item{
     @extend %basic-style;    
-    font-size: calc($tiny + 2vw);   
+    font-size: calc($medium + 1vw); 
+    width: calc(90px + 6vw); 
     background-color: $color-button;
     color: $color-button-font;
     padding: $small $medium;

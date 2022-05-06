@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background-color: rgba(43, 112, 190, 0.8392156863);
+  background-color: rgba(70, 108, 152, 0.8392156863);
   font-weight: 500;
   line-height: 1.4;
   color: #323750;
@@ -48,8 +48,9 @@ ul {
 }
 
 .list-item {
-  font-size: calc(3px + 2vw);
-  background-color: #fef3db;
+  font-size: calc(10px + 1vw);
+  width: calc(90px + 6vw);
+  background-color: #fef8e9;
   color: #323750;
   padding: 5px 10px;
   margin: 1.2vw 0.6vw;
@@ -63,7 +64,7 @@ ul {
   background: white;
 }
 .list-item:active {
-  background-color: #fef3db;
+  background-color: #fef8e9;
 }
 
 html,
