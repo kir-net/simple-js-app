@@ -20,7 +20,6 @@
 
     .modal h1 {
         margin-top: 35px;
-        font-size: 40px;
         }
         
         .modal div {
@@ -34,9 +33,11 @@
         .modal-image {
         min-height: 160px;  
         }
+
+        table{
+            margin: 20px 0 20px 15%;
+          }
+          
         
-        .modal p {
-        font-size: 25px;
-        margin: 20px 0 20px 15%;
-    }
+   
 }
