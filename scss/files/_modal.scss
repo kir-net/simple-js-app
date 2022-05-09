@@ -1,3 +1,4 @@
+/*
 html, 
 body {
   font-family: Arial, sans-serif;
@@ -13,13 +14,13 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   
-  /* to show it above other content */
+  // to show it above other content 
   z-index: 999; 
   
-  /* to allow scrolling if the screen is not high enough*/
+  // to allow scrolling if the screen is not high enough
   overflow: auto; 
   
-  /* this is used to center the modal */
+  // this is used to center the modal 
   display: grid;
   text-align: center;
 }
@@ -51,15 +52,14 @@ body {
 }
 
 .modal div {
-  background-color: $color-image;
-  border: $color-image-border solid $nano;
   text-align: center;
-  width: 80%;
-  margin-left: 10% ;
 }
 
-.modal-image {
-  min-height: 120px;  
+.img-fluid{
+  max-width: 100%; 
+  height: auto;
+  background-color: $color-image;
+  border: $color-image-border solid $nano;
 }
 
 table{
@@ -76,7 +76,7 @@ td {
 }
 
 #modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
+  // CSS for modal container - add your own desired CSS styles here 
   display: block;
 }
 
@@ -87,3 +87,4 @@ td {
   padding-right: $medium;
 }
 
+*/

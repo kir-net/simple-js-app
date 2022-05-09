@@ -2,19 +2,15 @@
 /*            base settings           */
 /* ---------------------------------- */
 
-html {
-    font-size: 16px;
-}
-
 body {
     background-color: $color-page;
-    font-weight: 500;
-    line-height: 1.4;
+    font-weight: 500;   
     color: $color-page-font;
 }
 
 h1 { 
     @extend %basic-style;
+    text-align: center;
     background-color: $color-title;
     width: 90%; 
     padding: $small 0;  
@@ -25,34 +21,24 @@ h1 {
     box-shadow: inset 0 0 20px $small $color-title-shadow;
 } 
 
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-inline-start: 0;
-    list-style-type: none;
+.list-container{
+    margin: 3%;
 }
 
-.list-item{
-    @extend %basic-style;    
-    font-size: calc($medium + 1vw); 
-    width: calc(90px + 6vw); 
-    text-transform: capitalize;
-    background-color: $color-button;
-    color: $color-button-font;
-    padding: $small $medium;
-    margin: 1.2vw 0.6vw; 
+.list-group-item{    
+    background-color: inherit;
     border-style: none;
-    white-space: nowrap;
+}
+
+.btn-primary{
+    @extend %basic-style;       
+    text-transform: capitalize;
+    border-style: none;
     border-radius: 5% 20%  5%  5%;
-    box-shadow: inset 0 0 $tiny $nano $color-button-shadow;
-    transition: all 0.15s ease-in-out 0s;
-    &:hover {
-        @extend %button-focus;             
-        background: $color-button-hover;
-    }
-    &:active {
-        @extend %button-focus;        
-        background-color: $color-button;
-    }
+    width: calc(60px + 7vw);
+    font-size: calc(7px + 1.1vw); 
+    padding: 0.5vw;
+    color: $color-button-font;
+    background-color: $color-button;
+
 }

@@ -42,18 +42,18 @@ let pokemonRepository = (function() {
     
     // create list of pokemon buttons with names and images, and print on page
     function addListItem(pokemon) {
-        
-        let pokemonList  = document.querySelector(".pokemon-list");  
-        let listItem     = document.createElement("li");
-        let button       = document.createElement("button");    
-        
-        button.innerText = pokemon.name;
-        button.classList.add("list-item"); 
-        listItem.appendChild(button);
-        pokemonList.appendChild(listItem);
-        button.addEventListener("click", function () {
-            showDetails(pokemon);
-        });   
+
+      $('#pokemon-list').append(
+        $('<li>')
+          .addClass('col list-group-item')
+          .append(
+            $('<button>')
+            .text(pokemon.name)
+            .addClass('list-item  btn  btn-primary')
+            .attr('data-toggle', 'modal')
+            .attr('data-target', '#modalContainer')
+          )
+      )
     }
 
     // fetch Pokemons from pokeapi
@@ -77,7 +77,7 @@ let pokemonRepository = (function() {
         let url = pokemon.detailsUrl;
         return fetch(url)
         .then(response => response.json()) 
-        .then(function (details) {
+        .then(function (details) { 
           
           // Now we add the details to the pokemon
           pokemon.imageUrl = details.sprites.front_default;         
@@ -107,83 +107,56 @@ let pokemonRepository = (function() {
             );
         });
     }
-
+ 
     // show modal
-    let modalContainer = document.querySelector("#modal-container");
     function showModal(title, text, array, url) {
-      modalContainer.innerHTML = "";
-      let modal = document.createElement("div");
-      modal.classList.add("modal");
-  
-      let closeButtonElement = document.createElement("button");
-      closeButtonElement.classList.add("modal-close");
-      closeButtonElement.innerText = "Close";
-      closeButtonElement.addEventListener("click", hideModal);
-  
-      let titleElement = document.createElement("h1");
-      titleElement.innerText = title;
+      
+      $('.modal-close').on('click', function(){
+        hideModal();
+      });
+      $('.modal-title').text(title);
 
-      let imageDiv = document.createElement("div");
-      let imageElement = document.createElement("img");
-      imageElement.classList.add("modal-image");
-      imageElement.src = url;
-      imageDiv.appendChild(imageElement);
-  
-      let contentElement = document.createElement("table");
-      let Row1 = document.createElement("tr");
-      let Row1Col1 = document.createElement("td");
-      Row1Col1.classList.add("emphasize");
-      Row1Col1.innerText = 'Height:';
-      let Row1Col2 = document.createElement("td");
-      Row1Col2.innerText = ` ${text}`;
-      let Row2 = document.createElement("tr");
-      let Row2Col1 = document.createElement("td");
-      Row2Col1.classList.add("emphasize");
-      Row2Col1.innerText = 'Types:';
-      let Row2Col2 = document.createElement("td");
-      Row2Col2.innerText = `${array}`;
-
-      Row2.appendChild(Row2Col1);
-      Row2.appendChild(Row2Col2);
-      Row1.appendChild(Row1Col1);
-      Row1.appendChild(Row1Col2);
-
-      contentElement.appendChild(Row1);
-      contentElement.appendChild(Row2);
-
-      //contentElement.innerText = `Height: ${text} \n Types: ${array}`;
-        
-      modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
-      modal.appendChild(imageDiv);
-      modal.appendChild(contentElement);
-      modalContainer.appendChild(modal);  
-  
-      modalContainer.classList.add("is-visible");
+      $('.modal-body').append(
+        $('<div>')
+        // append image
+        .append(
+          $('<img>')
+            .attr("scr", url)
+            .addClass('modal-image', 'img-fluid')
+        )          
+        // append table
+        .append(
+          $('<table>')
+            // first row
+            .append($('<tr>')
+              .append($('<td>')
+                .addClass('emphasize')
+                .text('Height:')
+              )
+              .append($('<td>')
+                .text(` ${text}`)
+              )
+            )
+            // second row
+            .append($('<tr>')
+              .append($('<td>')
+                .addClass('emphasize')
+                .text('Types:')
+              )             
+              .append($('<td>')
+                .text(` ${array}`)
+              )
+            )
+        )      
+      )
+      $('#modalContainer').addClass('is-visible');
     }
-  
+    
     // hide modal
     function hideModal() {
-      modalContainer.classList.remove("is-visible");
+      $('#modalContainer').removeClass('is-visible');
     }
-  
-    // close modal when user hits ESC
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-        hideModal();  
-      }
-    });
 
-    // close modal when user clicks outside modal 
-    modalContainer.addEventListener("click", (e) => {
-      // Since this is also triggered when clicking INSIDE the modal
-      // We only want to close if the user clicks directly on the overlay
-      let target = e.target;
-      if (target === modalContainer) {
-        hideModal();
-      }
-    });
-  
     // return contained functions
     return {
         getAll: getAll,
