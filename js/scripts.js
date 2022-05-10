@@ -52,6 +52,9 @@ let pokemonRepository = (function() {
             .addClass('list-item  btn  btn-primary')
             .attr('data-toggle', 'modal')
             .attr('data-target', '#modalContainer')
+            .on("click", function(){
+              showDetails(pokemon)
+            })
           )
       )
     }
@@ -116,12 +119,12 @@ let pokemonRepository = (function() {
       });
       $('.modal-title').text(title);
 
-      $('.modal-body').append(
+      $('.modal-body').html("").append(
         $('<div>')
         // append image
         .append(
           $('<img>')
-            .attr("scr", url)
+            .attr("src", url)
             .addClass('modal-image', 'img-fluid')
         )          
         // append table

@@ -45,6 +45,14 @@ h1 {
   background-color: #fef8e9;
 }
 
+.nav-item:hover {
+  background-color: #4d4d4d;
+}
+
+.nav-link {
+  padding-left: 1vw;
+}
+
 /* ---------------------------------- */
 /*           media queries            */
 /* ---------------------------------- */

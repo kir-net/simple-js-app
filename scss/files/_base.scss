@@ -42,3 +42,14 @@ h1 {
     background-color: $color-button;
 
 }
+
+.nav-item{
+    &:hover{
+        background-color: $color-navbar-hover;
+    }
+}
+
+.nav-link{
+    padding-left: 1vw;
+}
+
