@@ -103,28 +103,25 @@ let pokemonRepository = (function() {
     function showDetails(pokemon) {
         loadDetails(pokemon)
         .then(function () {
-            showModal(pokemon.name, 
-              pokemon.height,  
-              extractTypes(pokemon.types), 
-              pokemon.imageUrl
-            );
+          showModal(pokemon)
         });
     }
  
     // show modal
-    function showModal(title, text, array, url) {
+    function showModal(pokemon) {
       
       $('.modal-close').on('click', function(){
         hideModal();
       });
-      $('.modal-title').text(title);
+      $('.modal-title').text(pokemon.name);
 
       $('.modal-body').html("").append(
         $('<div>')
         // append image
         .append(
           $('<img>')
-            .attr("src", url)
+            .attr('src', pokemon.imageUrl)
+            .attr('alt', 'Image of selected pokemon')
             .addClass('modal-image', 'img-fluid')
         )          
         // append table
@@ -137,7 +134,7 @@ let pokemonRepository = (function() {
                 .text('Height:')
               )
               .append($('<td>')
-                .text(` ${text}`)
+                .text(pokemon.height)
               )
             )
             // second row
@@ -147,7 +144,7 @@ let pokemonRepository = (function() {
                 .text('Types:')
               )             
               .append($('<td>')
-                .text(` ${array}`)
+                .text(extractTypes(pokemon.types))
               )
             )
         )      
@@ -171,7 +168,6 @@ let pokemonRepository = (function() {
         showDetails: showDetails,
         extractTypes: extractTypes
     }  
-
 })();
 
 

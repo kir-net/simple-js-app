@@ -21,7 +21,10 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark   ">
-		<a class="navbar-brand" href="#">Navbar</a>
+		<a class="navbar-brand" 
+      href="#"
+      aria-label="Toggle navigation">
+    </a>
 		<button 
       class="navbar-toggler" 
       type="button" 
@@ -69,13 +72,14 @@
     class="modal fade" 
     id="modalContainer"
     tabindex="-1" 
-    role="dialog" 
+    role="dialog"
+    aria-labelledby="modalLabel"
     aria-hidden="true">
 
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title"></h5>
+          <h2 class="modal-title" id="modalLabel" ></h2>
           <button 
             type="button" 
             class="close" 
@@ -85,7 +89,8 @@
           </button>
         </div>
         <div class="modal-body">
-        </div>      
+        </div> 
+         
       </div>
     </div>
   </div>

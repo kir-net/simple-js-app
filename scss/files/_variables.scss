@@ -23,12 +23,12 @@ $color-button:              lighten($color-title, 28%);
 $color-button-font:         $darkgrey;
 $color-button-hover:        lighten($color-button, 10%);
 $color-button-shadow:       $white;
-$color-button-font-active:  $blue;
+$color-button-font-active:  $darkgrey;
 // image
 $color-image:               $whitegrey;
 $color-image-border:        $lightgrey;
 // navbar
-$color-navbar-hover:        darken(grey, 20%);
+$color-navbar-hover:        darken($grey, 20%);
 
 
 // Distances
@@ -48,4 +48,12 @@ $huge:   30px;
 %button-focus {
     box-shadow: inset 0 0 $huge $small $color-button-hover;
     box-shadow: 0 0 $small $nano $color-button-shadow;
+    background-color: $color-button-hover;
+    color:$color-button-font-active;
+}
+
+%navbar-hover {
+    box-shadow: inset 0 0 $huge $small $color-button-hover;
+    box-shadow: 0 0 $small $nano $color-button-shadow;
+    background-color: $color-navbar-hover;
 }
