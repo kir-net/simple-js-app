@@ -25,7 +25,6 @@ const pokemonRepository = (function () {
   function add(pokemon) {
     if (isPokemon(pokemon)) {
       pokemonList.push(pokemon);
-      // console.log(`${pokemon.name} was added successfully.`)
     }
   }
 
@@ -102,7 +101,7 @@ const pokemonRepository = (function () {
                   .append($("<td>").text(extractTypes(pokemon.types)))
               )
           )
-      );
+      ).delay(100).hide().fadeIn(150);
     $("#modalContainer").addClass("is-visible");
   }
 
