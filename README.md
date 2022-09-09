@@ -1,13 +1,13 @@
-# simple-js-app
+# Pokédex App
 
-**simple-js-app** is a small web application which loads Pokémon data from an API and enables viewing some details.
+**The Pokédex App** is a small web application which loads Pokémon data from an API and enables viewing some details.
 
 
 
 ## Key features:
 
 - Load data from [pokeapi.co](https://pokeapi.co)
-- Display a list of 150 clickable pokémon items on start screen
+- Display a list of 210 clickable pokémon items on start screen
 - Display individual details in a modal
 
 
@@ -24,6 +24,6 @@
 
 - Javascript
 - HTML
-- CSS
+- SCSS
 - Bootstrap
 - JQuery
