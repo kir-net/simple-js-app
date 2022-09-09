@@ -13,24 +13,24 @@
     .modal-title {
         margin-top: 5px;
         font-size: calc(18px + 1.1vw);
-      }
+    }
       
     .modal-image{
         max-width: 80%;  
         min-width: 50%;
         margin-top: 1vw;
         padding: 0;
-      }
+    }
 
-      table{ 
+    table{ 
         margin: 14px 0 20px 10%;
-      }
+    }
 
-      td {
-        font-size: calc(11px + 0.8vw);
-      }
-      
-      .emphasize{
-        font-size: calc(10px + 0.8vw);
-      }
+    td {
+        font-size: calc(11px + 0.5vw);
+    }
+    
+    .emphasize{
+        font-size: calc(10px + 0.5vw);
+    }
 }
